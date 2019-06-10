@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {TablePageComponent} from './table-page/table-page.component';
 import {DirectivePageComponent} from './directive-page/directive-page.component';
 import {CoreModule} from '../../core/core.module';
-import {SharedModule} from '../../../shared/shared.module';
+import {SharedModule} from '../../shared/shared.module';
 import {
   MatButtonModule,
   MatFormFieldModule,

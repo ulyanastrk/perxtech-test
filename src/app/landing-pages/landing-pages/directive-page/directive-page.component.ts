@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {TextWatchDirective} from '../../../../shared/directives/text-watch.directive';
+import {TextWatchDirective} from '../../../shared/directives/text-watch.directive';
 
 @Component({
   selector: 'app-directive-page',
