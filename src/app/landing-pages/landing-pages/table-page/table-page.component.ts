@@ -1,7 +1,8 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {BooksService} from '../../../core/providers/books.service';
 import {Book} from '../../../core/models/book.model';
-import {MatSort, MatTableDataSource} from '@angular/material';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-table-page',
@@ -17,8 +18,10 @@ export class TablePageComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.booksService.getBooks().subscribe((books: Book[]) => this.dataSource.data = books);
-    this.dataSource.sort = this.sort;
+    this.booksService.getBooks().subscribe((books: Book[]) => {
+      this.dataSource.data = books;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   applyFilter(filterValue: string) {
