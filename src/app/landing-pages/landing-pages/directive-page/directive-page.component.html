@@ -1,0 +1,7 @@
+<div class="directive">
+  <mat-form-field>
+    <input matInput appTextWatch  placeholder="Enter your text">
+  </mat-form-field>
+  <button  mat-raised-button (click)="onChangeText()">Click</button>
+  <div class="directive-text">{{text || 'Nothing to show'}}</div>
+</div>

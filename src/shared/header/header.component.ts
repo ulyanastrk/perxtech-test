@@ -1,34 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-header',
   animations: [
-    trigger('showHeader', [
-      state('show', style({
-       top: 0,
-       opacity: 1
-      })),
-      state('hide', style({
+    trigger('appear', [
+      transition(':enter', [style({
         top: '-100px',
         opacity: 0
-      })),
-      transition('hide => show', [
-        animate('1s')
+      }),
+        animate('700ms ease-in-out', style({
+          top: 0,
+          opacity: 1
+        })),
       ]),
-      transition('show => hide', [
-        animate('1s')
+      transition(':leave', [
+        animate('700ms ease-in-out', style({
+          top: '-100px',
+          opacity: 0
+        }))
       ])
     ]),
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  isHide = true;
 
-  ngOnInit() {
-   this.isHide = false;
-  }
-
+export class HeaderComponent {
 }

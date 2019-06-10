@@ -1,0 +1,27 @@
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {BooksService} from '../../../core/providers/books.service';
+import {Book} from '../../../core/models/book.model';
+import {MatSort, MatTableDataSource} from '@angular/material';
+
+@Component({
+  selector: 'app-table-page',
+  templateUrl: './table-page.component.html',
+  styleUrls: ['./table-page.component.scss']
+})
+export class TablePageComponent implements OnInit{
+  displayedColumns: string[] = ['id', 'name', 'image', 'created_at', 'updated_at', 'authors'];
+  dataSource = new MatTableDataSource();
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private booksService: BooksService) {
+  }
+
+  ngOnInit() {
+    this.booksService.getBooks().subscribe((books: Book[]) => this.dataSource.data = books);
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+}

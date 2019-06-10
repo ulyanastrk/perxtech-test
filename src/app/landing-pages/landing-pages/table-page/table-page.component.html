@@ -1,0 +1,40 @@
+<div class="table" *ngIf="dataSource.data.length > 0">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> No.</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"><a [href]="element.link" target="_blank">{{element.name}}</a></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Image</mat-header-cell>
+      <mat-cell *matCellDef="let element"><img [src]="element.image"></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+      <mat-header-cell *matHeaderCellDef> Created</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.created_at | date: 'dd.MM.yyyy'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="updated_at">
+      <mat-header-cell *matHeaderCellDef> Updated</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.updated_at | date: 'dd.MM.yyyy'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="authors">
+      <mat-header-cell *matHeaderCellDef> Authors</mat-header-cell>
+      <mat-cell *matCellDef="let element"><a [href]="element.link" target="_blank">{{element.authors}}</a></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
