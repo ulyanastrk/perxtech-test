@@ -1,7 +1,9 @@
 <div class="directive">
   <mat-form-field>
-    <input matInput appTextWatch placeholder="Enter your text">
+    <input matInput placeholder="Enter your text" [(ngModel)] = 'inputText'>
   </mat-form-field>
-  <button mat-raised-button (click)="onChangeText()">Click</button>
-  <div class="directive-text">{{text || 'Nothing to show'}}</div>
+  <div class="directive-title">Your text: </div>
+  <div class="directive-text">{{inputText || 'Nothing to show'}}</div>
+  <div class="directive-title">Reverse directive: </div>
+  <div class="directive-text" [appReverseText]="inputText || 'Nothing to show'"></div>
 </div>

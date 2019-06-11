@@ -13,6 +13,7 @@ import {
 import {LandingPagesComponent} from './landing-pages/landing-pages.component';
 import {LandingPagesRoutingModule} from './landing-pages-routing.module';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {CommonModule} from '@angular/common';
     MatFormFieldModule,
     MatInputModule,
     MatSortModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ]
 })
 

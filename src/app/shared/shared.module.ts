@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {HeaderComponent} from './header/header.component';
-import { ButtonComponent } from './button/button.component';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {TextWatchDirective} from './directives/text-watch.directive';
+import {ReverseTextDirective} from './directives/reverse-text.directive';
+import {ButtonDirective} from './directives/button.directive';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    ButtonComponent,
-    TextWatchDirective
+    ReverseTextDirective,
+    ButtonDirective
   ],
   imports: [
     RouterModule,
@@ -17,8 +17,8 @@ import {TextWatchDirective} from './directives/text-watch.directive';
   ],
   exports: [
     HeaderComponent,
-    ButtonComponent,
-    TextWatchDirective
+    ReverseTextDirective,
+    ButtonDirective
   ]
 })
 
