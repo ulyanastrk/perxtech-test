@@ -30,8 +30,7 @@ import {CommonModule} from '@angular/common';
     MatInputModule,
     MatSortModule,
     MatButtonModule
-  ],
-  providers: []
+  ]
 })
 
 export class LandingPagesModule {

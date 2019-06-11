@@ -1,4 +1,4 @@
-import { environment } from '../../environments/environment';
+import {environment} from '../../environments/environment';
 
 export class HttpConfig {
   static get API_URL() {
